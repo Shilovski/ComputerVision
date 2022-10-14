@@ -23,8 +23,8 @@ def count_balls(image_path):
         cv2.circle(output, (x, y), 3, (0, 0, 255), 3)
 
     radius_list = circles[0, :, 2]
-    radius_mean = radius_list.mean()
-    dispersion = round(((radius_list - radius_mean) ** 2).mean(), 2)
+    radius_mean = round(radius_list.mean())
+    dispersion = round(((radius_list - radius_mean) ** 2).mean())
 
     cv2.imshow(f"count = {len(radius_list)}, radius_mean = {radius_mean}, dispersion = {dispersion}", output)
     cv2.waitKey(0)
